@@ -1,0 +1,12 @@
+challenge_set
+million_playlist_dataset
+data/*
+!data/challenge_set
+data/challenge_set/*
+!data/challenge_set/empty
+!data/million_playlist_dataset
+data/million_playlist_dataset/*
+!data/million_playlist_dataset/empty
+output/*
+!output/empty
+utils/__pycache__
