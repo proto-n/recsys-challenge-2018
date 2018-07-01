@@ -1,6 +1,6 @@
 # recsys-challenge-2018
 
-Solution for the 2018 Spotify RecSys Challenge by the team "Definitive Turtles"
+Solution for the 2018 Spotify RecSys Challenge by the team **Definitive Turtles**
 
 How to run:
 * place the million playlist dataset json files into the `data_raw/million_playlist_dataset` and the challenge set into the `data_raw/challenge_set` directories
