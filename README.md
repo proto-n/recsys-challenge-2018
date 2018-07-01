@@ -12,3 +12,4 @@ How to run:
 Requirements:
 * Python 3.6 with standard scientific packages (pandas, numpy, scipy, etc.)
 * Either lot of processor cores or a lot of time. The scripts 5-6-7 contain a variable names `threads`; set this as desired
+* About 40gb free space
