@@ -10,6 +10,16 @@ How to run:
 * run `python 9_format_and_fix.py output/merged.csv output/submission.csv`
 
 Requirements:
-* Python 3.6 with standard scientific packages (pandas, numpy, scipy, etc.)
+* Python 3.5 with standard scientific packages (pandas, numpy, scipy, etc.)
 * Either lot of processor cores or a lot of time. The scripts 5-6-7 contain a variable named `threads`; set this as desired
 * About 40gb free space
+
+Reference environment:
+We ran the models using the following python version and packages
+```
+Python 3.5.2 (we used the conda environment)
+pandas 0.22.0
+numpy 1.14.0
+matplotlib 2.0.2
+scipy 1.0.0
+```
