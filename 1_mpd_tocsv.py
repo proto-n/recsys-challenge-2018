@@ -1,9 +1,5 @@
-import sys
 import json
-import time
 import os
-import re
-from pprint import pprint
 from collections import defaultdict
 import pandas as pd
 
@@ -20,7 +16,7 @@ song_ids = defaultdict(lambda: None)
 next_song_id = 0
 
 playlist_meta = open("data/million_playlist_dataset/playlist_meta.csv", "w")
-song_meta = open("data/million_playlist_dataset/song_meta.csv", "w")
+song_meta = open("data/million_playlist_dataset/song_meta_no_duplicates.csv", "w")
 playlists = open("data/million_playlist_dataset/playlists.csv", "w")
 
 playlist_meta.write('pid,collaborative,duration_ms,modified_at,name,num_albums,num_artist,num_edits,num_followers,num_tracks\n')
@@ -52,16 +48,16 @@ def write(playlist):
             song_ids[track['track_uri']] = song_id
             next_song_id += 1
 
-        song_meta.write('%s,%s,%s,%s,%s,%s,%s,%s\n' % (
-            song_id,
-            escapefunc(track['album_name']),
-            track['album_uri'],
-            escapefunc(track['artist_name']),
-            track['artist_uri'],
-            track['duration_ms'],
-            escapefunc(track['track_name']),
-            track['track_uri'],
-        ))
+            song_meta.write('%s,%s,%s,%s,%s,%s,%s,%s\n' % (
+                song_id,
+                escapefunc(track['album_name']),
+                track['album_uri'],
+                escapefunc(track['artist_name']),
+                track['artist_uri'],
+                track['duration_ms'],
+                escapefunc(track['track_name']),
+                track['track_uri'],
+            ))
 
         playlists.write('%s,%s,%s\n' % (pid, song_id, track['pos']))
 
@@ -81,6 +77,6 @@ playlist_meta.close()
 song_meta.close()
 playlists.close()
 
-song_meta = pd.read_csv('data/million_playlist_dataset/song_meta.csv')
-song_meta.drop_duplicates()
-song_meta.to_csv('data/million_playlist_dataset/song_meta_no_duplicates.csv')
+# song_meta = pd.read_csv('data/million_playlist_dataset/song_meta.csv')
+# song_meta.drop_duplicates()
+# song_meta.to_csv('data/million_playlist_dataset/song_meta_no_duplicates.csv')

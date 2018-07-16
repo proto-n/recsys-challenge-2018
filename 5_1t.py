@@ -7,7 +7,7 @@ import sys
 sys.path.append('./utils')
 from name_normalize import name_normalize
 
-threads = 20
+threads = 4
 all_tasks = [
     [1, 1500, ['1t'], 0.933],
 ]

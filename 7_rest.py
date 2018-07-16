@@ -4,7 +4,7 @@ import scipy.sparse as spl
 from concurrent.futures import ProcessPoolExecutor
 import sys
 
-threads = 35
+threads = 4
 all_tasks = [
     [5, 8000, ['5t', '5nt'], 0.352],
     [10, 12000, ['10t', '10nt'], 0.38],
